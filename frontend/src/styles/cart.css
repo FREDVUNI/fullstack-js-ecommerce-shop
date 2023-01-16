@@ -1,0 +1,31 @@
+.table tr td img{
+   width:80px !important;
+   height:80px !important;
+   object-fit:cover; 
+}
+td i{
+    cursor:pointer;
+}
+td{
+    color: var(--primary-color);
+}
+.remove{
+    cursor:pointer;
+}
+@media only screen and (max-width:768px){
+    .totals h6{
+        font-size:1.2rem;
+        display:column;
+        max-width:80px;
+        column-gap:100px;
+    }
+    .buttons{
+        width:200px;
+        display:column;
+        align-items:center;
+        justify-content:center;
+    }
+    thead{
+        display:none;
+    }
+}
