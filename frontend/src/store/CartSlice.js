@@ -37,6 +37,7 @@ const CartSlice = createSlice({
                 )
             })
             state.cartItems = cart
+            localStorage.setItem("cart-items",JSON.stringify(state.cartItems))
             toast.success(`Product has been removed from cart.`,{
                 position:'top-left',
             })
