@@ -85,7 +85,7 @@ const Cart = () => {
                     <h1 className="text-muted">Your shopping cart is empty.</h1>
                     <div className="buttons">
                       <motion.button whileTap={{ scale:1.2 }} className="shop__btn">
-                        <Link to="/shop">Continue shopping</Link>
+                        <Link to="/">Continue shopping</Link>
                       </motion.button>
                     </div>
                 </Col>
