@@ -5,15 +5,17 @@ import { Container,Row,Col } from 'reactstrap'
 import '../styles/cart.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-// import chair from '../assets/images/arm-chair-01.jpg'
-// import watch from '../assets/images/watch-01.jpg'
-// import phone from '../assets/images/phone-06.jpg'
-// import sofa from '../assets/images/single-sofa-04.png'
-// import table from '../assets/images/double-sofa-01.png'
+import { useSelector,useDispatch } from 'react-redux'
+import { removeFromCart } from '../store/CartSlice'
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart)
+  const dispatch = useDispatch()
+
+  const handleRemoveFromCart = (item) =>{
+    dispatch(removeFromCart(item))
+  }
+
   return (
     <Helmet title={'Cart'}>
       <CommonSection title={'Shopping Cart'}/>
@@ -40,7 +42,7 @@ const Cart = () => {
                       <td><img src={item.image} alt='cart'/></td>
                       <td>
                         {item.product}
-                        <div className="text-danger remove">
+                        <div className="text-danger remove" onClick={ () => handleRemoveFromCart(item) }>
                           <motion.i whileTap={{ scale:1.2 }} className='ri-delete-bin-line'></motion.i> Remove
                         </div>
                       </td>

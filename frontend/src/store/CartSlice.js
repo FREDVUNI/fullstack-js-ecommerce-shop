@@ -29,9 +29,20 @@ const CartSlice = createSlice({
                 })
             }
             localStorage.setItem("cart-items",JSON.stringify(state.cartItems))
+        },
+        removeFromCart(state,action){
+            let cart = state.cartItems.filter((item) =>{
+                return(
+                    item.id !== action.payload.id
+                )
+            })
+            state.cartItems = cart
+            toast.success(`Product has been removed from cart.`,{
+                position:'top-left',
+            })
         }
     }
 })
 
-export const { addToCart } = CartSlice.actions
+export const { addToCart,removeFromCart } = CartSlice.actions
 export default CartSlice.reducer 
