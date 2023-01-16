@@ -40,7 +40,10 @@ const Footer = () => {
                   )):( <p>There are categories.</p> )
                   } */}
                   <ListGroupItem>
-                    <Link to="/shop">Cameras</Link>
+                    <Link to="/shop">Laptops</Link>
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <Link to="/shop">Phones</Link>
                   </ListGroupItem> 
                   <ListGroupItem>
                     <Link to="/shop">Cameras</Link>
