@@ -10,12 +10,19 @@ import '../styles/product.css'
 import Related from './Related'
 import { useGetProductQuery } from '../store/ProductsApi'
 import Loader from '../loader/Loader'
+import { addToCart } from '../store/CartSlice'
+import { useDispatch } from 'react-redux'
 
 const Product = () => {
     const {id} = useParams()
     const { data,isLoading,error } = useGetProductQuery(id);
     const [tab,setTab] = useState('desc')
 
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (data) =>{
+        dispatch(addToCart(data))
+    }
     // console.log(data)
 
     useEffect(() =>{
@@ -75,7 +82,9 @@ const Product = () => {
                             <span>Category: {data[0].category.toUpperCase()}</span>
                         </div>
                         <p className="mt-3">{data[0].details}</p>
-                        <motion.button whileTap={{ scale:1.2 }} className="shop__btn">Add to cart</motion.button>
+                        <motion.button whileTap={{ scale:1.2 }} className="shop__btn" onClick={ () =>handleAddToCart(data[0]) }>
+                            Add to cart
+                        </motion.button>
                     </div>
                 </Col>
             </Row>
