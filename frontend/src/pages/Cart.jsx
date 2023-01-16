@@ -6,7 +6,7 @@ import '../styles/cart.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
-import { removeFromCart } from '../store/CartSlice'
+import { removeFromCart,clearCart } from '../store/CartSlice'
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart)
@@ -16,6 +16,11 @@ const Cart = () => {
     dispatch(removeFromCart(item))
   }
 
+  const handleClearCart = () =>{
+    dispatch(clearCart())
+  }
+
+  window.scroll(0,0)
   return (
     <Helmet title={'Cart'}>
       <CommonSection title={'Shopping Cart'}/>
@@ -53,6 +58,9 @@ const Cart = () => {
                     ))}
                   </tbody>
                 </table>
+                <div className="text-danger remove" onClick={ () => handleClearCart() }>
+                    <motion.i whileTap={{ scale:1.2 }} className='ri-delete-bin-line'></motion.i> clear cart
+                </div>
               </Col>
               <Col lg='3' md='6'>
                 <div className="totals gap-3">
