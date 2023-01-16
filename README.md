@@ -1,5 +1,6 @@
 ## Fullstack shop
 A full stack ecommerce shop with react,redux toolkit, react redux and node js with json data 
+#cc https://www.youtube.com/watch?v=4GMljXR1h78&t=908s
 
 
 ## screenshot
