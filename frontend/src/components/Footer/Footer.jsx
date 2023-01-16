@@ -3,9 +3,12 @@ import './footer.css'
 import { Container,Row,Col,ListGroup,ListGroupItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/eco-logo.png'
+// import { useGetAllProductsQuery } from '../../store/ProductsApi'
 
 const Footer = () => {
   let year = new Date().getFullYear();
+  // let { data,isLoading,error } = useGetAllProductsQuery();
+  
   return (
     <footer className="footer">
         <Container>
@@ -26,17 +29,27 @@ const Footer = () => {
               <div className="footer__quick-links">
                 <h4 className="quick__links-title">Top Categories</h4>
                 <ListGroup>
+                  {/* { isLoading ? (<p>Loading ...</p>)
+                  :error ?(<p>Something went wrong ...</p>):
+                    data?.length > 0 ?
+                    data?.map((item)=>(
+                    <ListGroupItem key={item.id}>
+                      <Link to="/shop">{item.category}</Link>
+                    </ListGroupItem>
+
+                  )):( <p>There are categories.</p> )
+                  } */}
                   <ListGroupItem>
-                    <Link to="#">Mobile Phones</Link>
+                    <Link to="/shop">Cameras</Link>
+                  </ListGroupItem> 
+                  <ListGroupItem>
+                    <Link to="/shop">Cameras</Link>
                   </ListGroupItem>
                   <ListGroupItem>
-                    <Link to="#">Cameras</Link>
+                    <Link to="/shop">Fridges</Link>
                   </ListGroupItem>
                   <ListGroupItem>
-                    <Link to="#">Fridges</Link>
-                  </ListGroupItem>
-                  <ListGroupItem>
-                    <Link to="#">Headsets</Link>
+                    <Link to="/shop">Headsets</Link>
                   </ListGroupItem>
                 </ListGroup>
               </div>
