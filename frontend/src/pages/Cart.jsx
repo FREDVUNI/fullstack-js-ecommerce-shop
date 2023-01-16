@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import CommonSection from '../components/Ui/CommonSection';
 import Helmet from '../components/Helmet/Helmet'
 import { Container,Row,Col } from 'reactstrap'
@@ -6,7 +6,7 @@ import '../styles/cart.css'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { useSelector,useDispatch } from 'react-redux'
-import { removeFromCart,clearCart } from '../store/CartSlice'
+import { removeFromCart,clearCart,getTotals } from '../store/CartSlice'
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart)
@@ -19,6 +19,10 @@ const Cart = () => {
   const handleClearCart = () =>{
     dispatch(clearCart())
   }
+
+  useEffect(() =>{
+    dispatch(getTotals())
+  },[cart,dispatch])
 
   window.scroll(0,0)
   return (
@@ -53,7 +57,7 @@ const Cart = () => {
                       </td>
                       <td>{item.price}</td>
                       <td>{item.cartQuantity}</td>
-                      <td>{"UGX. " + Number(item.cartQuantity * item.price.replace('UGX.','').replace(',','')).toLocaleString()}</td>
+                      <td>{"UGX. " + Number(item.cartQuantity * item.price.replace('UGX.','').replace(/,/g,'')).toLocaleString()}</td>
                     </tr>
                     ))}
                   </tbody>
@@ -66,13 +70,13 @@ const Cart = () => {
                 <div className="totals gap-3">
                   <h6 className="d-flex align-items-center justify-content-between">
                     SubTotal
-                    <span className="fs-4 fw-bold">$1200</span>
+                    <span className="fs-4 fw-bold">{"UGX." + Number(cart.totalAmount).toLocaleString()}</span>
                   </h6>
                 </div>
                 <p className="fs-6 mt-2">Taxes and shipping will calculated at checkout.</p>
                 <div className="buttons">
                   <motion.button whileTap={{ scale:1.2 }} className="shop__btn w-100">
-                    <Link to="/checkout">CheckOut</Link>
+                    <Link to="/">CheckOut</Link>
                   </motion.button>
                   <motion.button whileTap={{ scale:1.2 }} className="shop__btn w-100">
                     <Link to="/shop">Continue shopping</Link>

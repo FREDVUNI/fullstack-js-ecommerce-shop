@@ -1,17 +1,23 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 import { motion } from 'framer-motion'
 import '../../styles/productCard.css'
 import { Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import { addToCart } from '../../store/CartSlice'
-import { useDispatch } from 'react-redux'
+import { addToCart,getTotals } from '../../store/CartSlice'
+import { useDispatch,useSelector } from "react-redux"
 
 const ProductCard = ({ item }) => {
     const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart)
 
     const handleAddToCart = (item) =>{
         dispatch(addToCart(item))
     }
+
+    useEffect(() =>{
+        dispatch(getTotals())
+    },[cart,dispatch])
+
     return (
         <Col lg="3" md="3">
         <div className="product__item">
