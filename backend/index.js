@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended:true }))
 app.use(express.json())
 
-const PORT = process.env.PORT || 3000
+// const PORT = process.env.PORT || 3000
 
 app.get("/",(req,res)=>{
     res.status(200) 
@@ -25,6 +25,6 @@ app.get("/",(req,res)=>{
 app.use("/",require("./routes/products")) 
 
 // connectDB()  
-app.listen(PORT,() =>{
-    console.log(`server started on port http://localhost:${PORT}`)
-})
+// app.listen(PORT,() =>{
+//     console.log(`server started on port http://localhost:${PORT}`)
+// })
