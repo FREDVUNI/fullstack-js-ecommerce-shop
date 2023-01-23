@@ -25,6 +25,6 @@ app.get("/",(req,res)=>{
 app.use("/",require("./routes/products")) 
 
 // connectDB()  
-// app.listen(PORT,() =>{
-//     console.log(`server started on port http://localhost:${PORT}`)
-// })
+app.listen(PORT,() =>{
+    console.log(`server started on port http://localhost:${PORT}`)
+})
