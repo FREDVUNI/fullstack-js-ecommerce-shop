@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.urlencoded({ extended:false }))
 app.use(express.json())
 
-// const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 app.get("/",(req,res)=>{
     res.status(200) 
