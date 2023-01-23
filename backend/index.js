@@ -18,7 +18,8 @@ app.get("/",(req,res)=>{
     .json({
         status:200, 
         message:"API for the e-commerce store.Check it out below 🤷‍♂️",
-        api: "http://localhost:4001/products"
+        // api: "http://localhost:4001/products"
+        api:"https://full-stack-api.onrender.com/products"
     })
 })
 
