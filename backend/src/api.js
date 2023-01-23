@@ -8,7 +8,7 @@ const app = express()
 app.use(morgan("tiny"))
 dotenv.config({path:".env"})
 app.use(cors())
-app.use(express.urlencoded({ extended:true }))
+app.use(express.urlencoded({ extended:false }))
 app.use(express.json())
 
 // const PORT = process.env.PORT || 3000
@@ -22,7 +22,7 @@ app.get("/",(req,res)=>{
     })
 })
 
-app.use("/",require("./routes/products")) 
+app.use("/",require("../routes/products")) 
 
 // connectDB()  
 // app.listen(PORT,() =>{
