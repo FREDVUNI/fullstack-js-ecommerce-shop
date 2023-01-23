@@ -22,7 +22,7 @@ app.get("/",(req,res)=>{
     })
 })
 
-app.use("/",require("../routes/products")) 
+app.use("/",require("./routes/products")) 
 
 // connectDB()  
 // app.listen(PORT,() =>{
