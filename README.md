@@ -9,7 +9,6 @@ A full-stack ecommerce application built with React, Redux Toolkit, React Redux,
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
