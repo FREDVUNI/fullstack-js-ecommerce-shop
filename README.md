@@ -37,7 +37,7 @@ This will concurrently start both the server and the client. Open your browser a
 - **React Redux** for integrating React with Redux.
 - **Node.js** for the server-side logic.
 - **Express.js** as the web framework for Node.js.
-- **JSON** data handling for products and user information.
+- **JSON** data handling for products information.
 
 ## Screenshots
 
