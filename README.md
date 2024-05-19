@@ -15,7 +15,7 @@ A full-stack ecommerce application built with React, Redux Toolkit, React Redux,
 To get started, clone the repository and install the necessary dependencies.
 
 ```bash
-git clone https://github.com/[FREDVUNI]/fullstack-js-ecommerce-shop.git
+git clone https://github.com/FREDVUNI/fullstack-js-ecommerce-shop.git
 cd fullstack-js-ecommerce-shop
 npm install
 ```
