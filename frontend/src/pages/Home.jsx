@@ -53,7 +53,7 @@ const Home = () => {
           <Col lg='6' md='6'>
             <div className="hero__content">
               <p className="hero__subtitle">Trending Products In {year}</p>
-              <h2>Make your interior modern and minimalistic</h2>
+              <h2>Get your modern and amazing electronics</h2>
               <p>
                 lorem ipsum Make your interior modern and minimalistic
                 lorem ipsum Make your interior modern and minimalistic
