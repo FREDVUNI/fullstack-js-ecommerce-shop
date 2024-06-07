@@ -1,7 +1,7 @@
 import React,{ useState,useEffect } from 'react'
 import Helmet from '../components/Helmet/Helmet'
 import { Container,Col,Row } from 'reactstrap'
-import heroImg from '../assets/images/hero-img.png'
+import heroImg from '../assets/images/Electronic.png'
 import '../styles/home.css'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
