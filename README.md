@@ -41,7 +41,7 @@ This will concurrently start both the server and the client. Open your browser a
 
 ## Screenshots
 
-![Ecommerce Shop](https://user-images.githubusercontent.com/41730664/212640189-a2a35e52-6a96-4b9a-99e7-d97193e5db72.png)
+![image](https://github.com/FREDVUNI/fullstack-js-ecommerce-shop/assets/41730664/63038022-3c30-40f4-8aca-2e38e45039b8)
 
 ## Contributing
 
